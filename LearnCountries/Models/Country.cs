@@ -7,9 +7,9 @@ namespace LearnCountries.Models
 {
     public class Country
     {
-        public string id { get; set; }
-        public string countryName { get; set; }
-        public string capitalName { get; set; }
-        public string flag { get; set; }
+        public int Id { get; set; }
+        public string CountryName { get; set; }
+        public string CapitalName { get; set; }
+        public string Flag { get; set; }
     }
 }
