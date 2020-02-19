@@ -1,0 +1,29 @@
+POST https://localhost:5001/api/user/test HTTP/1.1
+Content-Type: application/json
+
+{ 
+	"Name" : "Andrey",
+	"Email" : "waeqrqr@mail.ru",
+	"Password" : "qeraf",
+	"Score" : 0
+}
+
+###
+Get https://localhost:5001/api/user/test/abc HTTP/1.1
+
+###
+GET https://localhost:5001/api/user/test HTTP/1.1
+
+###
+PUT https://localhost:5001/api/user/test HTTP/1.1
+Content-Type: application/json
+
+{
+	"Name" : "abc",
+	"Email" : "waeqrqr@mail.ru",
+	"Password" : "qeraf228",
+	"Score" : 0
+}
+
+###
+DELETE https://localhost:5001/api/user/test/abc HTTP/1.1

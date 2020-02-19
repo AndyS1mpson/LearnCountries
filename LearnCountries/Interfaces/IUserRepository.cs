@@ -6,9 +6,9 @@ namespace LearnCountries.Interfaces
     public interface  IUserRepository
     {
         public IEnumerable<User> GetUsers();
-        public User GetUser(int id);
+        public User GetUser(string name);
         public void CreateUser(User user);
-        public void DeleteUser(int id);
+        public void DeleteUser(string name);
         public void UpdateUser(User user);
     }
 }
