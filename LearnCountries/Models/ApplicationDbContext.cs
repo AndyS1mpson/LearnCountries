@@ -7,7 +7,7 @@ namespace LearnCountries.Models
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
         {
             
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
         public DbSet<User> Users {get;set;}
         public DbSet<Country> Countries {get;set;}

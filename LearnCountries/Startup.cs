@@ -34,6 +34,7 @@ namespace LearnCountries
                 => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<IUserRepository,UserRepository>();
+            services.AddTransient<ICountryRepository,CountryRepository>();
 
             
             services.AddControllers();

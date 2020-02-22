@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace LearnCountries.Models
 {
+    public enum Access{user=0,admin=1}
+
     public class User
     {
         [Key]
         public int Id { get; set; }
-        //[Required]
+        [Required]
         public string Name { get; set; }
-        //[EmailAddress]
+        [Required]
+        public Access UserAccess{get; set; }
+        [EmailAddress]
         public string Email { get; set; }
-        //[Required]
+        [Required]
         public string Password { get; set; }
         public int Score { get; set; }
+        public int TaskSettings{get; set; }
     }
 }

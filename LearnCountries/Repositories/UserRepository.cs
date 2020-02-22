@@ -38,7 +38,15 @@ namespace LearnCountries.Repositories
                 User userForUpdate=_db.Users.FirstOrDefault(x=>x.Name==user.Name);
                 if(userForUpdate == null)
                     throw new NullReferenceException("User isn't exist");
-                _db.Users.Update(userForUpdate);
+                
+                 userForUpdate.Name=user.Name;
+                 userForUpdate.Password=user.Password;
+                 userForUpdate.UserAccess=user.UserAccess;
+                 userForUpdate.Email=user.Email;
+                 userForUpdate.Score=user.Score;
+                 userForUpdate.TaskSettings=user.TaskSettings;
+                
+                _db.SaveChangesAsync();
             }
     }
 }
