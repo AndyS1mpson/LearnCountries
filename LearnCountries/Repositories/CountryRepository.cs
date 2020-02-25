@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using LearnCountries.Interfaces;
 using LearnCountries.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace LearnCountries.Repositories
 {
@@ -18,12 +19,16 @@ namespace LearnCountries.Repositories
             }
         public void DeleteCountry(string name)
         {
-            var countryToDelete=_db.Countries.FirstOrDefault(x=>x.CountryName==name);
+            Country countryToDelete=_db.Countries.FirstOrDefault(x=>x.CountryName==name);
             if(countryToDelete==null)
                 throw new NullReferenceException("Country is not exist");
             _db.Countries.Remove(countryToDelete);
             _db.SaveChanges();
         }
+
+        public IEnumerable<string> GetCapitals()
+            =>_db.Countries.Select(x=>x.CapitalName).Distinct();
+            //_db.Countries.FromSqlRaw("SELECT DISTINCT CapitalName ").AsEnumerable();
 
         public IEnumerable<Country> GetCountries()
             =>_db.Countries.Where(x=>true).ToList();

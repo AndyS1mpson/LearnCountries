@@ -1,5 +1,7 @@
+
+//User Tests
 ###
-Get https://localhost:5001/api/user/test/abc HTTP/1.1
+Get https://localhost:5001/api/user/test/Andrey HTTP/1.1
 
 ###
 GET https://localhost:5001/api/user/test HTTP/1.1
@@ -18,14 +20,67 @@ Content-Type: application/json
 }
 
 ###
-DELETE https://localhost:5001/api/user/test/Andrey HTTP/1.1
+PUT https://localhost:5001/api/user/test HTTP/1.1
+Content-Type: application/json
+
+{
+	"Name" : "Andrey",
+	"Email" : "waeqrqr@mail.ru",
+	"Password" : "qeraf",
+	"Access"	:	1,
+	"Score" : 0,
+	"TaskSettings" : 11
+}
 
 ###
- POST https://localhost:5001/api/country/test HTTP/1.1
+DELETE https://localhost:5001/api/user/test/Andrey HTTP/1.1
+
+
+
+//Country Tests
+
+###
+GET https://localhost:5001/api/country/test HTTP/1.1
+
+###
+GET https://localhost:5001/api/country/test/Russia HTTP/1.1
+
+###
+GET https://localhost:5001/api/country/test/capitals HTTP/1.1
+
+###
+DELETE https://localhost:5001/api/country/test/Russia HTTP/1.1
+
+###
+POST https://localhost:5001/api/country/test HTTP/1.1
  Content-Type: application/json
 
  {
 	 "CountryName" : "Russia",
 	 "CapitalName" : "Moscow",
-	 "Flag" : "abc"
+	 "Flag" : "cda"
  }
+
+###
+POST https://localhost:5001/api/country/test HTTP/1.1
+Content-Type: application/json
+
+{
+	"CountryName" : "Ukraine",
+	 "CapitalName" : "Kiev",
+	 "Flag" : "abc"
+}
+###
+PUT https://localhost:5001/api/country/test HTTP/1.1
+Content-Type: application/json
+
+{
+	 "CountryName" : "Ukraine",
+	 "CapitalName" : "Kiev",
+	 "Flag" : "dgr"
+}
+
+
+
+
+ 
