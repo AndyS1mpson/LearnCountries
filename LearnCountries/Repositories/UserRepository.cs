@@ -20,7 +20,7 @@ namespace LearnCountries.Repositories
             }
         public void DeleteUser(string name)
             {
-                User userToDelete=_db.Users.FirstOrDefault(x=>x.Name==name);
+                User userToDelete=_db.Users.FirstOrDefault(x=>x.UserName==name);
                 if(userToDelete==null)
                     throw new NullReferenceException("User is not exist");
                 _db.Users.Remove(userToDelete);
@@ -28,18 +28,18 @@ namespace LearnCountries.Repositories
             }
 
         public User GetUser(string name)
-            =>_db.Users.FirstOrDefault(x => x.Name == name);
+            =>_db.Users.FirstOrDefault(x => x.UserName == name);
 
         public IEnumerable<User> GetUsers()
             =>_db.Users.Where(x=>true).ToList();
 
         public void UpdateUser(User user)
             {
-                User userForUpdate=_db.Users.FirstOrDefault(x=>x.Name==user.Name);
+                User userForUpdate=_db.Users.FirstOrDefault(x=>x.UserName==user.UserName);
                 if(userForUpdate == null)
                     throw new NullReferenceException("User isn't exist");
                 
-                 userForUpdate.Name=user.Name;
+                 userForUpdate.UserName=user.UserName;
                  userForUpdate.Password=user.Password;
                  userForUpdate.UserAccess=user.UserAccess;
                  userForUpdate.Email=user.Email;

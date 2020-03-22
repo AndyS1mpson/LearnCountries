@@ -13,7 +13,11 @@ namespace LearnCountries.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string UserName { get; set; }
+        [Required]
+        public string Name {get; set; } 
+        [Required]
+        public string SurName {get; set; }
         [Required]
         public Access UserAccess{get; set; }
         [EmailAddress]
