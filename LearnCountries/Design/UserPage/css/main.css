@@ -167,6 +167,7 @@
   .projName{
     padding: 20px;
     margin-top: -20px;
+    margin-left: 40px;
     font-size: 25px;
     color: #ffffff;
     }
@@ -183,7 +184,7 @@
     height: 200px;
     border-radius: 50%;
     margin-top: 100px;
-    margin-left: -180px;
+    margin-left: -190px;
   }
   .user-data{
     width: 900px;
@@ -463,4 +464,10 @@
     position: relative;
     margin-top: -165px;
     margin-right: 390px;
+}
+.txt6{
+  margin-top: 400px;
+  margin-left: -140px;
+  font-size: 25px;
+  color: #ffffff;
 }

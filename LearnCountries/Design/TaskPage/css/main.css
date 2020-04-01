@@ -176,7 +176,7 @@
 }
 .top-text{
     font-size: 23px;
-    margin-left: 20px;
+    margin-left: 15px;
     margin-top: -25px;
     margin-bottom: 20px;
 }
@@ -187,7 +187,7 @@
 .table{
     font-size: 20px;
     margin-top: 20px;
-    margin-left: 75px;
+    margin-left: 70px;
 }
 .txt-3{
     font-size: 30px;
@@ -201,8 +201,8 @@
     margin-left: 100px;
 }
 .you-place{
-    font-size: 20px;
-    margin-left: 20px;
+    font-size: 17px;
+    margin-left: 17px;
 }
 .you-score{
     font-size: 20px;
@@ -211,7 +211,8 @@
 }
 .task-number{
     font-size: 20px;
-    margin-left: 1000px;
+    margin-top: 30px;
+    margin-left: 970px;
 }
 .text{
     position: absolute;
