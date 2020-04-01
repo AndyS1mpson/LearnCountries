@@ -183,7 +183,7 @@
     height: 200px;
     border-radius: 50%;
     margin-top: 100px;
-    margin-left: -180px;;
+    margin-left: -180px;
   }
   .user-data{
     width: 900px;
@@ -330,7 +330,7 @@
   align-items: center;
   padding: 0 25px;
   margin-left: 700px;
-  margin-top: -150px;
+  margin-top: -110px;
   margin-right: 700px;
   margin-bottom: 400px;
   -webkit-transition: all 0.4s;
@@ -443,4 +443,24 @@
   to {
     transform: scale(1, 1);
   }
+}
+.txt3{
+  font-size: 20px;
+  margin-left: 250px;
+  margin-top: -200px;
+
+}
+.slider{
+  margin-left: 380px;
+  margin-top: -250px;
+
+}
+.txt4{
+  margin-left: -237px;
+  margin-top: -165px;
+}
+.txt5{
+    position: relative;
+    margin-top: -165px;
+    margin-right: 390px;
 }
