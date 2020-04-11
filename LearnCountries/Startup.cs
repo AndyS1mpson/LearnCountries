@@ -36,9 +36,9 @@ namespace LearnCountries
             services.AddTransient<IUserRepository,UserRepository>();
             services.AddTransient<ICountryRepository,CountryRepository>();
 
-            
+            services.AddRazorPages();
+            services.AddMvc();
             services.AddControllers();
-            //services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,13 +56,13 @@ namespace LearnCountries
             }
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            
             app.UseRouting();
-
+            app.UseStaticFiles();       // connect static фfiles
             app.UseAuthorization();
             app.UseEndpoints(endpoints => 
             {
-                endpoints.MapControllers(); //connect routing to controllers
+                endpoints.MapRazorPages(); //connect routing to controllers
             });
             // app.UseEndpoints(endpoints =>
             // {
