@@ -20,5 +20,5 @@ Study project for memorizing capitals and flags of countries
 Веб-приложение
   1. Back-end ASP.NET C#
   2. EntityFrameworkCore
-  3. React(не окончательно)
+  3. Razor Pages
   4. Асинхронность поведения сервиса с целью защиты от лагов и провисаний
