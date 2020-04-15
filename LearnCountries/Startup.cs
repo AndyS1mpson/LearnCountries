@@ -13,6 +13,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.Design;
 using LearnCountries.Interfaces;
 using LearnCountries.Repositories;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LearnCountries
 {
@@ -36,40 +38,46 @@ namespace LearnCountries
             services.AddTransient<IUserRepository,UserRepository>();
             services.AddTransient<ICountryRepository,CountryRepository>();
 
-            services.AddRazorPages();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            // services.AddRazorPages().AddRazorPagesOptions(options =>
+            // {
+            //     options.Conventions.AddFolderRouteModelConvention(
+            //     "/Login", model => {});
+            // });
+
+            
             services.AddMvc();
-            services.AddControllers();
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
-            //app.UseHttpsRedirection();
+            app.UseDeveloperExceptionPage();   
             app.UseStaticFiles();
-            
-            app.UseRouting();
-            app.UseStaticFiles();       // connect static фfiles
+            app.UseDefaultFiles();
+            app.UseStatusCodePages();
+            app.UseSession();
             app.UseAuthorization();
-            app.UseEndpoints(endpoints => 
-            {
-                endpoints.MapRazorPages(); //connect routing to controllers
-            });
+
             // app.UseEndpoints(endpoints =>
             // {
-            //     endpoints.MapControllerRoute(
-            //         name: "default",
-            //         pattern: "{controller=Home}/{action=Index}/{id?}");
+            //     endpoints.MapRazorPages();
             // });
+            
+            app.UseRouting();
+
+            app.UseAuthentication();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
+            });
         }
     }
 }

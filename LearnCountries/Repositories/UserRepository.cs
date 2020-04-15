@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using LearnCountries.Interfaces;
 using LearnCountries.Models;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace LearnCountries.Repositories
 {
@@ -18,6 +19,12 @@ namespace LearnCountries.Repositories
                 _db.Users.AddRange(user);
                 _db.SaveChangesAsync();
             }
+
+        public Task CreateUserAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteUser(string name)
             {
                 User userToDelete=_db.Users.FirstOrDefault(x=>x.UserName==name);
@@ -27,11 +34,26 @@ namespace LearnCountries.Repositories
                 _db.SaveChanges();
             }
 
-        public User GetUser(string name)
-            =>_db.Users.FirstOrDefault(x => x.UserName == name);
+        public Task DeleteUserAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public User GetUser(string email,string password)
+            =>_db.Users.FirstOrDefault(x => x.Email== email && x.Password == password);
+
+        public Task<User> GetUserAsync(string email, string password)
+        {
+            throw new NotImplementedException();
+        }
 
         public IEnumerable<User> GetUsers()
             =>_db.Users.Where(x=>true).ToList();
+
+        public Task<IEnumerable<User>> GetUsersAsync()
+        {
+            throw new NotImplementedException();
+        }
 
         public void UpdateUser(User user)
             {
@@ -48,5 +70,10 @@ namespace LearnCountries.Repositories
                 
                 _db.SaveChangesAsync();
             }
+
+        public Task UpdateUserAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

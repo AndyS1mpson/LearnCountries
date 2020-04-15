@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MyApp.Namespace
 {
-    public class LogInModel : PageModel
+    public class MainModel : PageModel
     {
         public void OnGet()
         {

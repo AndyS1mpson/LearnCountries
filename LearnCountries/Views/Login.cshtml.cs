@@ -7,8 +7,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MyApp.Namespace
 {
-    public class MainPageModel : PageModel
+    public class LoginModel : PageModel
     {
+        public string Email{get;set;}
+        public string Password{get;set;}
         public void OnGet()
         {
         }
