@@ -5,6 +5,7 @@ using LearnCountries.Interfaces;
 using LearnCountries.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.Namespace;
 
@@ -22,7 +23,6 @@ namespace LearnCountries.Controllers
             return View();
         }
 
-        [Route("LogIn/Check")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LogInModel model)

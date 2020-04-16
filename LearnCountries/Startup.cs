@@ -41,10 +41,10 @@ namespace LearnCountries
             //services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
 
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => 
-            {
-                options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/LogIn");
-            });
+            // services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => 
+            // {
+            //     options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/LogIn");
+            // });
 
             
             services.AddRazorPages();

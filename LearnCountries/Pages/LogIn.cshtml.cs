@@ -29,13 +29,53 @@ namespace MyApp.Namespace
         {
             
         }
-        public void OnPost()
+        public IActionResult OnPost()
         {
            Email = Request.Form["email"];
            Password = Request.Form["pass"];
            
+           if(ModelState.IsValid)
+            {
+                User user = _userRepository.GetUser(Email,Password);
+                if(user != null)
+                {
+                    Authenticate(Email);        // аутентифицируем
+
+                    return RedirectToAction("~/UserPage");
+                }
+                ModelState.AddModelError("","Некорректные логин и(или) пароль");
+            }
+            return RedirectToAction("/UserPage");
         }
         
-       
+        public IActionResult Login()
+        {
+            if(ModelState.IsValid)
+            {
+                User user = _userRepository.GetUser(Email,Password);
+                if(user != null)
+                {
+                    Authenticate(Email);        // аутентифицируем
+
+                    return RedirectToAction("~/UserPage");
+                }
+                ModelState.AddModelError("","Некорректные логин и(или) пароль");
+            }
+            return RedirectToAction("/UserPage");
+        }
+        private void Authenticate(string email)
+        {
+            // создаем один claim
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimsIdentity.DefaultNameClaimType,email)
+            };
+            // создаем объект ClaimsIdentity
+            ClaimsIdentity id = new ClaimsIdentity(claims,"ApplicationCoockie"
+                                            ,ClaimsIdentity.DefaultNameClaimType,ClaimsIdentity.DefaultRoleClaimType);
+
+            // установка аутентификационных куки
+            HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,new ClaimsPrincipal(id));
+        }
     }
 }
