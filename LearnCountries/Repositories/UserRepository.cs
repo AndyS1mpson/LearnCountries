@@ -40,9 +40,9 @@ namespace LearnCountries.Repositories
         }
 
         public User GetUser(string email,string password)
-            =>_db.Users.FirstOrDefault(x => x.Email== email && x.Password == password);
+            =>_db.Users.FirstOrDefault(x => x.Email == email && x.Password == password);
 
-        public Task<User> GetUserAsync(string email, string password)
+        public Task<User> GetUserAsync(string email,string Password)
         {
             throw new NotImplementedException();
         }

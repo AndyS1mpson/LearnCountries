@@ -17,7 +17,7 @@ namespace LearnCountries.Controllers.Test
         public IEnumerable<User> GetUsers()
             => _userRepository.GetUsers();
 
-        // [HttpGet("{username}")]
+        [HttpGet("{username}")]
         // public User GetUser(string userName)
         //     =>_userRepository.GetUser(userName);
         [HttpDelete("{username}")]

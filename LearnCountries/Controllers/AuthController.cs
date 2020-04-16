@@ -25,7 +25,7 @@ namespace LearnCountries.Controllers
         [Route("LogIn/Check")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginModel model)
+        public async Task<IActionResult> Login(LogInModel model)
         {
             if(ModelState.IsValid)
             {
