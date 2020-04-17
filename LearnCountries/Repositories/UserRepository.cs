@@ -16,8 +16,8 @@ namespace LearnCountries.Repositories
         }
         public void CreateUser(User user)
             { 
-                _db.Users.AddRange(user);
-                _db.SaveChangesAsync();
+                _db.Users.Add(user);
+                _db.SaveChanges();
             }
 
         public Task CreateUserAsync(User user)
@@ -39,6 +39,8 @@ namespace LearnCountries.Repositories
             throw new NotImplementedException();
         }
 
+        public User GetUserByEmail(string email)
+            => _db.Users.FirstOrDefault(x => x.Email == email);
         public User GetUser(string email,string password)
             =>_db.Users.FirstOrDefault(x => x.Email == email && x.Password == password);
 

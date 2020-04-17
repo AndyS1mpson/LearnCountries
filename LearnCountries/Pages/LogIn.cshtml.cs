@@ -41,13 +41,13 @@ namespace MyApp.Namespace
                 {
                     Authenticate(Email);        // аутентифицируем
 
-                    return RedirectToAction("~/UserPage");
+                    return RedirectToRoute("/UserPage",new { id = user.UserName });
                 }
-                ModelState.AddModelError("","Некорректные логин и(или) пароль");
+                //ModelState.AddModelError("","Некорректные логин и(или) пароль");
             }
-            return RedirectToAction("/UserPage");
+            return Redirect("/Register");
         }
-        
+
         public IActionResult Login()
         {
             if(ModelState.IsValid)
