@@ -1,14 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using LearnCountries.Interfaces;
 using LearnCountries.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Drawing;
+using static System.Net.Mime.MediaTypeNames;
+using LearnCountries;
 
 namespace MyApp.Namespace
 {
+
     public class RegisterModel : PageModel
     {
         [Required]
@@ -30,7 +35,6 @@ namespace MyApp.Namespace
         {
         }
 
-      
         public IActionResult OnPost()
         {
             name = Request.Form["Name"];
@@ -44,6 +48,8 @@ namespace MyApp.Namespace
                 User user =  _userRepository.GetUserByEmail(email);
                 if(user == null)
                 {
+                    //Image img = Image.FromFile("C:\Users\Пользователь\Documents\GitHub\LearnCountries\LearnCountries\wwwroot\images");
+                   string path = "C:\\Users\\Пользователь\\Documents\\GitHub\\LearnCountries\\LearnCountries\\wwwroot\\images\\unnamed.jpg";
                     _userRepository.CreateUser(new User{
                         Name = name,
                         SurName = surName,
@@ -51,12 +57,14 @@ namespace MyApp.Namespace
                         UserAccess = 0,
                         Email = email,
                         Password = password,
-                        Score = 0
+                        Score = 0,
+                        Avatar = ConvertImage.ImageToByteArrayFromFilePath(path)
                     });
                     return Redirect("/Login");
                 }
             }
                 return Redirect("/notFound");
         }
+
     }
 }

@@ -1,0 +1,99 @@
+﻿@page "{id?}"
+@model MyApp.Namespace.UserPageModel
+@{
+	var id = RouteData.Values["id"];
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Learn Countries</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="~/images/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/css/util.css">
+	<link rel="stylesheet" type="text/css" href="~/css/mainUP.css">
+<!--===============================================================================================-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-user">
+            <div class="row">
+				<div class="projName">Learn Countries</div>
+			</div>	
+			<img src="~/images/unnamed.jpg" alt="Avatar" class="avatar">
+			<div class="userName">UserName</div>
+			<div class="txt6">Score : 200</div>
+			<div class="user-data">
+			<div class="head">Select the first letters of country names to study : </div>
+			<ul class="checkboxes-1">
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">A (11)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">B (17)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">C (18)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-3" class="checkbox"><label for="checkbox-3" class="label">D (4)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-4" class="checkbox"><label for="checkbox-4" class="label">E (8)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">F (3)</label></li>
+			</ul>
+			<ul class="checkboxes-2">
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">G (11)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">H (3)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">I (8)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-3" class="checkbox"><label for="checkbox-3" class="label">J (3)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-4" class="checkbox"><label for="checkbox-4" class="label">K (8)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">L (9)</label></li>
+			</ul>
+			<ul class="checkboxes-3">
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">M (18)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">N (9)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">O (1)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-3" class="checkbox"><label for="checkbox-3" class="label">P (9)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-4" class="checkbox"><label for="checkbox-4" class="label">Q (1)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">R (3)</label></li>
+			</ul>
+			<ul class="checkboxes-4">
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">S (26)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">T (11)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">U (7)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-3" class="checkbox"><label for="checkbox-3" class="label">V (4)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-4" class="checkbox"><label for="checkbox-4" class="label">Y (1)</label></li>
+				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">Z (2)</label></li>
+			</ul>
+
+			<div class="txt2" >What do you want to learn?</div>
+			<li class="capitals" class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">Capitals</label></li>
+			<li class="flags" class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">Flags</label></li>
+			
+			<div class="txt3">How many questions do you want to answer?</div>
+			<input class="slider" type="range" min="10" max="50" list="rangeList1">
+				<datalist id="rangeList1">
+				<option value="10" label="10" />
+				<option value="20" label="20" />
+				<option value="30" label="30" />
+				<option value="40" label="40" />
+				<option value="50" label="50" />
+				</datalist>
+				<div class="txt4">10</div>
+				<div class="txt5">50</div>
+			<div class="container-login100-form-btn">
+				<button class="login100-form-btn">
+					Start
+				</button>
+			</div>
+		</div>
+    </div>
+</body>
+</html>

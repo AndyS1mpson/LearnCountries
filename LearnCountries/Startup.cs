@@ -50,6 +50,10 @@ namespace LearnCountries
             services.AddRazorPages();
             services.AddControllers();
             services.AddMvc();
+            
+            // services.AddMvc().AddRazorPagesOptions(options => {
+            //     options.Conventions.AddPageRoute("/User","/Login?id={id}");
+            // });
 
             //services.AddSession();
         }

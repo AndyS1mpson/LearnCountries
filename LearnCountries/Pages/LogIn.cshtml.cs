@@ -22,6 +22,7 @@ namespace MyApp.Namespace
         [DataType(DataType.Password)]
         public string Password {get; set;}
         public IUserRepository _userRepository;
+        
         public LogInModel(IUserRepository userRepository)
             => _userRepository = userRepository;
 
@@ -40,8 +41,10 @@ namespace MyApp.Namespace
                 if(user != null)
                 {
                     Authenticate(Email);        // аутентифицируем
-
-                    return RedirectToRoute("/UserPage",new { id = user.UserName });
+                    string url = "/"+ (string)user.Email;
+                    
+                    
+                    return RedirectToPage("UserPage",new {id = user.Id});
                 }
                 //ModelState.AddModelError("","Некорректные логин и(или) пароль");
             }

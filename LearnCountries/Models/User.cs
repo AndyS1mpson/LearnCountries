@@ -25,6 +25,7 @@ namespace LearnCountries.Models
         [Required]
         public string Password { get; set; }
         public int Score { get; set; }
-        public int TaskSettings{get; set; }
+        public int TaskSettings {get; set; }
+        public byte[] Avatar {get;set;}
     }
 }
