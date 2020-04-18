@@ -12,7 +12,7 @@ namespace MyApp.Namespace
     public class UserPageModel : PageModel
     {
         [BindProperty(Name="id",SupportsGet=true)]
-        public string email{get;set;}
+        public int id{get;set;}
         public User user{get;set;}
         private IUserRepository _userRepository;
         public string img{get;set;}
@@ -20,7 +20,7 @@ namespace MyApp.Namespace
             => _userRepository = userRepository;
         public void OnGet()
         {
-            user = _userRepository.GetUserByEmail(email);
+            user = _userRepository.GetUserById(id);
             //img = new FileContentResult(user.Avatar,"image/png");
             img = string.Format("data:{0};base64,{1}", "image/jpeg", Convert.ToBase64String(user.Avatar));
 

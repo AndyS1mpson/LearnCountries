@@ -42,7 +42,7 @@ namespace MyApp.Namespace
                 {
                     Authenticate(Email);        // аутентифицируем
                     
-                    return RedirectToPage("UserPage",new {id = user.Email});
+                    return RedirectToPage("UserPage",new {id = user.Id});
                 }
                 //ModelState.AddModelError("","Некорректные логин и(или) пароль");
             }
