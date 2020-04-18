@@ -35,9 +35,10 @@
             <div class="row">
 				<div class="projName">Learn Countries</div>
 			</div>	
-			<img src="~/images/unnamed.jpg" alt="Avatar" class="avatar">
-			<div class="userName">UserName</div>
-			<div class="txt6">Score : 200</div>
+			@* <img src="~/images/unnamed.jpg" alt="Avatar" class="avatar"> *@
+			<img src="@Model.img" alt="Avatar" class="avatar">
+			<div class="userName">@Model.user.UserName</div>
+			<div class="txt6">Score : @Model.user.Score</div>
 			<div class="user-data">
 			<div class="head">Select the first letters of country names to study : </div>
 			<ul class="checkboxes-1">

@@ -15,15 +15,18 @@ namespace MyApp.Namespace
         public string email{get;set;}
         public User user{get;set;}
         private IUserRepository _userRepository;
+        public string img{get;set;}
         public UserPageModel(IUserRepository userRepository)
             => _userRepository = userRepository;
         public void OnGet()
         {
-        
+            user = _userRepository.GetUserByEmail(email);
+            //img = new FileContentResult(user.Avatar,"image/png");
+            img = string.Format("data:{0};base64,{1}", "image/jpeg", Convert.ToBase64String(user.Avatar));
+
         }
         public void OnPost()
         {
-            user = _userRepository.GetUserByEmail(email);
         }
 
     }

@@ -9,5 +9,6 @@ namespace LearnCountries
             byte[] imageArray = File.ReadAllBytes(imagefilePath);
             return imageArray;
         }
+        
     }
 }
