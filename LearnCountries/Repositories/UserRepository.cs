@@ -61,18 +61,21 @@ namespace LearnCountries.Repositories
 
         public void UpdateUser(User user)
             {
-                User userForUpdate=_db.Users.FirstOrDefault(x=>x.UserName==user.UserName);
+                User userForUpdate=_db.Users.FirstOrDefault(x=>x.Email==user.Email);
                 if(userForUpdate == null)
                     throw new NullReferenceException("User isn't exist");
                 
-                 userForUpdate.UserName=user.UserName;
-                 userForUpdate.Password=user.Password;
-                 userForUpdate.UserAccess=user.UserAccess;
-                 userForUpdate.Email=user.Email;
-                 userForUpdate.Score=user.Score;
-                 userForUpdate.TaskSettings=user.TaskSettings;
-                
-                _db.SaveChangesAsync();
+                userForUpdate.Name = user.Name;
+                userForUpdate.SurName = user.SurName;
+                userForUpdate.UserName=user.UserName;
+                userForUpdate.Email=user.Email;
+                userForUpdate.Password=user.Password;
+                userForUpdate.Score=user.Score;
+                userForUpdate.UserAccess=user.UserAccess;
+                userForUpdate.TaskSettings=user.TaskSettings;
+                userForUpdate.Img = user.Img;
+
+                _db.SaveChanges();
             }
 
         public Task UpdateUserAsync(User user)

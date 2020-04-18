@@ -24,8 +24,11 @@ namespace LearnCountries.Models
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
+        [Required]
         public int Score { get; set; }
+        [Required]
         public int TaskSettings {get; set; }
-        public byte[] Avatar {get;set;}
+        [Required]
+        public byte[] Img {get; set; }
     }
 }

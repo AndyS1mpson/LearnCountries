@@ -58,7 +58,7 @@ namespace MyApp.Namespace
                         Email = email,
                         Password = password,
                         Score = 0,
-                        Avatar = ConvertImage.ImageToByteArrayFromFilePath(path)
+                        Img = ConvertImage.ImageToByteArrayFromFilePath(path)
                     });
                     return Redirect("/Login");
                 }
