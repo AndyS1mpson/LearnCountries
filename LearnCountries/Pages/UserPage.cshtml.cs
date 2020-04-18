@@ -11,7 +11,7 @@ namespace MyApp.Namespace
 {
     public class UserPageModel : PageModel
     {
-        [BindProperty(Name="user",SupportsGet=true)]
+        [BindProperty(Name="id",SupportsGet=true)]
         public string email{get;set;}
         public User user{get;set;}
         private IUserRepository _userRepository;
@@ -19,10 +19,10 @@ namespace MyApp.Namespace
             => _userRepository = userRepository;
         public void OnGet()
         {
+        
         }
         public void OnPost()
         {
-            email = Request.Query["id"];
             user = _userRepository.GetUserByEmail(email);
         }
 
