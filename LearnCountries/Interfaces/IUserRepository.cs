@@ -9,9 +9,11 @@ namespace LearnCountries.Interfaces
         public IEnumerable<User> GetUsers();
         public User GetUser(string email,string password);
         public User GetUserByEmail(string email);
+        public User GetUserById(int id);
         public void CreateUser(User user);
         public void DeleteUser(string name);
         public void UpdateUser(User user);
+
 
         public Task<IEnumerable<User>> GetUsersAsync();
         public Task<User> GetUserAsync(string email,string password);

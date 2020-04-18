@@ -15,10 +15,10 @@ namespace LearnCountries.Repositories
             _db=db;
         }
         public void CreateUser(User user)
-            { 
-                _db.Users.Add(user);
-                _db.SaveChanges();
-            }
+        { 
+            _db.Users.Add(user);
+            _db.SaveChanges();
+        }
 
         public Task CreateUserAsync(User user)
         {
@@ -44,6 +44,8 @@ namespace LearnCountries.Repositories
         public User GetUser(string email,string password)
             =>_db.Users.FirstOrDefault(x => x.Email == email && x.Password == password);
 
+        public User GetUserById(int id)
+            => _db.Users.FirstOrDefault(x => x.Id == id);
         public Task<User> GetUserAsync(string email,string Password)
         {
             throw new NotImplementedException();

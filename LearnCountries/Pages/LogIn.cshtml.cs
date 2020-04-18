@@ -41,10 +41,8 @@ namespace MyApp.Namespace
                 if(user != null)
                 {
                     Authenticate(Email);        // аутентифицируем
-                    string url = "/"+ (string)user.Email;
                     
-                    
-                    return RedirectToPage("UserPage",new {id = user.Id});
+                    return RedirectToPage("UserPage",new {id = user.Email});
                 }
                 //ModelState.AddModelError("","Некорректные логин и(или) пароль");
             }
