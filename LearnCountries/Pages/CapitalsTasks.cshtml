@@ -1,8 +1,10 @@
-﻿@page "{letters}/{num}"
+﻿@page "{id}/{letters}/{num}/{curNum}"
 @model MyApp.Namespace.CapitalsTasksModel
 @{
+    var id = RouteData.Values["id"];
     var letters = RouteData.Values["letters"];
     var num = RouteData.Values["num"];
+    var curNum = RouteData.Values["curNum"];
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -43,11 +45,11 @@
             </ol>
                 <p class="you-row">You : </p>
                 <label class="you-place">Position: 10</label>
-                <label class="you-score">Score : 30</label>
+                <label class="you-score">Score : @Model.user.Score</label>
             </ul>
         </div>
         <div class="task-container">
-            <div class="task-number">Task : 1/10</div>
+            <div class="task-number">Task : @Model.numOfCurTask/@Model.num</div>
             <div class="text">Choose the capital of this country :</div>
             <label class="capitalName">Australia</label>
             <form action="" method="post" class="choice">
