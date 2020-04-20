@@ -16,6 +16,7 @@ namespace LearnCountries.Models
         public string CapitalName { get; set; }
         [Required]
         public string Flag { get; set; }
-        public string MainLetter{get;set;}
+        [Required]
+        public char MainLetter{get;set;}
     }
 }

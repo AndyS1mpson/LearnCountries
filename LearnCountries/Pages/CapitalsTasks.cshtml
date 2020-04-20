@@ -38,25 +38,25 @@
             <ul>
             <ol class="table">
                 <div class="top-text">Top-3</div>
-                <li> Jhon : 830</li>
-                <li> Kate : 750</li>
-                <li> Sam : 745</li>
+                <li> @Model.topUsers[0].Name : @Model.topUsers[0].Score</li>
+                <li> @Model.topUsers[1].Name : @Model.topUsers[1].Score</li>
+                <li> @Model.topUsers[2].Name : @Model.topUsers[2].Score</li>
                 <div class="txt-3">...</div>
             </ol>
                 <p class="you-row">You : </p>
-                <label class="you-place">Position: 10</label>
+                <label class="you-place">Position: @Model.userPosition</label>
                 <label class="you-score">Score : @Model.user.Score</label>
             </ul>
         </div>
         <div class="task-container">
             <div class="task-number">Task : @Model.numOfCurTask/@Model.num</div>
             <div class="text">Choose the capital of this country :</div>
-            <label class="capitalName">Australia</label>
+            <label class="capitalName">@Model.enterCountry.CountryName</label>
             <form action="" method="post" class="choice">
-                <label><input type="radio" name="answer" value="1"> Moscow</label><br>
-                <label><input type="radio" name="answer" value="2"> Kiev</label><br>
-                <label><input type="radio" name="answer" value="3"> Сanberra</label><br>
-                <label><input type="radio" name="answer" value="4"> Kioto</label><br>
+                <label><input type="radio" name="answer" value="1">@Model.countryArray[0].CapitalName</label><br>
+                <label><input type="radio" name="answer" value="2">@Model.countryArray[1].CapitalName</label><br>
+                <label><input type="radio" name="answer" value="3">@Model.countryArray[2].CapitalName</label><br>
+                <label><input type="radio" name="answer" value="4">@Model.countryArray[3].CapitalName</label><br>
                 <div class="container-login100-form-btn">
                     <button class="login100-form-btn">
                         Go

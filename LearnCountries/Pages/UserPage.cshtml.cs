@@ -66,9 +66,9 @@ namespace MyApp.Namespace
                 number = Request.Form["numberOfTasks"];
 
                 if(learn == "Capitals")
-                    return RedirectToPage("CapitalsTasks",new { id = id, letters = checkedLetters.ToString(), num= number,curNum = 1});
+                    return RedirectToPage("CapitalsTasks",new { id = id, letters = new string(checkedLetters.ToArray()), num= number,curNum = 1});
                 else
-                    return RedirectToPage("FlagsTasks",new { id = id, letters = checkedLetters.ToString(), num= number,curNum = 1});
+                    return RedirectToPage("FlagsTasks",new { id = id, letters = new string(checkedLetters.ToArray()), num= number,curNum = 1});
                     
             }
         }
