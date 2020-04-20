@@ -53,6 +53,7 @@ namespace LearnCountries
 
             services.AddMvc().AddRazorPagesOptions(options => {
                 options.Conventions.AddPageRoute("/UserPage","{id}");
+                //options.Conventions.AddPageRoute("/CapitalsTasks","{letters}/{num}");
             });
 
             //services.AddSession();

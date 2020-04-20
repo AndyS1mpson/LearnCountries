@@ -43,62 +43,64 @@
 			</label>
 			<div class="userName">@Model.user.UserName</div>
 			<div class="txt6">Score : @Model.user.Score</div>
-			<div class="user-data">
+		<form method="POST">
+		<div class="user-data">
 			<div class="head">Select the first letters of country names to study : </div>
 			<ul class="checkboxes-1">
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">A (11)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">B (17)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">C (18)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-3" class="checkbox"><label for="checkbox-3" class="label">D (4)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-4" class="checkbox"><label for="checkbox-4" class="label">E (8)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">F (3)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="A"><label for="checkbox-2" class="label">A (11)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="B"><label for="checkbox-2" class="label">B (17)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="C"><label for="checkbox-5" class="label">C (18)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="D"><label for="checkbox-3" class="label">D (4)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="E"><label for="checkbox-4" class="label">E (8)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="F"><label for="checkbox-5" class="label">F (3)</label></li>
 			</ul>
 			<ul class="checkboxes-2">
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">G (11)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">H (3)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">I (8)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-3" class="checkbox"><label for="checkbox-3" class="label">J (3)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-4" class="checkbox"><label for="checkbox-4" class="label">K (8)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">L (9)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="G"><label for="checkbox-2" class="label">G (11)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="H"><label for="checkbox-2" class="label">H (3)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="I"><label for="checkbox-5" class="label">I (8)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="J"><label for="checkbox-3" class="label">J (3)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="K"><label for="checkbox-4" class="label">K (8)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="L"><label for="checkbox-5" class="label">L (9)</label></li>
 			</ul>
 			<ul class="checkboxes-3">
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">M (18)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">N (9)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">O (1)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-3" class="checkbox"><label for="checkbox-3" class="label">P (9)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-4" class="checkbox"><label for="checkbox-4" class="label">Q (1)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">R (3)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="M"><label for="checkbox-2" class="label">M (18)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="N"><label for="checkbox-2" class="label">N (9)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="O"><label for="checkbox-5" class="label">O (1)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="P"><label for="checkbox-3" class="label">P (9)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="Q"><label for="checkbox-4" class="label">Q (1)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="R"><label for="checkbox-5" class="label">R (3)</label></li>
 			</ul>
 			<ul class="checkboxes-4">
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">S (26)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">T (11)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">U (7)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-3" class="checkbox"><label for="checkbox-3" class="label">V (4)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-4" class="checkbox"><label for="checkbox-4" class="label">Y (1)</label></li>
-				<li class="checkbox-group"><input type="checkbox" id="checkbox-5" class="checkbox"><label for="checkbox-5" class="label">Z (2)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="S"><label for="checkbox-2" class="label">S (26)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="T"><label for="checkbox-2" class="label">T (11)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="U"><label for="checkbox-5" class="label">U (7)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="V"><label for="checkbox-3" class="label">V (4)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="Y"><label for="checkbox-4" class="label">Y (1)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="Z"><label for="checkbox-5" class="label">Z (2)</label></li>
 			</ul>
 
 			<div class="txt2" >What do you want to learn?</div>
-			<li class="capitals" class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">Capitals</label></li>
-			<li class="flags" class="checkbox-group"><input type="checkbox" id="checkbox-2" class="checkbox"><label for="checkbox-2" class="label">Flags</label></li>
+			<li class="capitals" class="checkbox-group"><input type="radio" name="radio" id="checkbox-2" class="checkbox" value="Capitals"><label for="checkbox-2" class="label">Capitals</label></li>
+			<li class="flags" class="checkbox-group"><input type="radio" name="radio" id="checkbox-2" class="checkbox" value="Flags"><label for="checkbox-2" class="label">Flags</label></li>
 			
 			<div class="txt3">How many questions do you want to answer?</div>
-			<input class="slider" type="range" min="10" max="50" list="rangeList1">
+			<input class="slider" type="range" min="10" max="30" name="numberOfTasks" list="rangeList1">
 				<datalist id="rangeList1">
-				<option value="10" label="10" />
-				<option value="20" label="20" />
-				<option value="30" label="30" />
-				<option value="40" label="40" />
-				<option value="50" label="50" />
+				<option value="10" label="10"></option>
+				<option value="15" label="15"></option>
+				<option value="20" label="20"></option>
+				<option value="25" label="25"></option>
+				<option value="30" label="30"></option>
 				</datalist>
 				<div class="txt4">10</div>
-				<div class="txt5">50</div>
+				<div class="txt5">30</div>
 			<div class="container-login100-form-btn">
 				<button class="login100-form-btn">
 					Start
 				</button>
 			</div>
 		</div>
+		</form>
     </div>
 </body>
 </html>

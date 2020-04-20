@@ -20,6 +20,10 @@ namespace MyApp.Namespace
         public string img{get;set;}
         [BindProperty(Name="file",SupportsGet=true)]
         public IFormFile file{get;set;}
+        [BindProperty(Name="CheckedLetter",SupportsGet=true)]
+        public List<char> checkedLetters{get;set;}
+        public string learn{get;set;}
+        public string number{get;set;}
         public UserPageModel(IUserRepository userRepository)
             => _userRepository = userRepository;
         public void OnGet()
@@ -31,29 +35,46 @@ namespace MyApp.Namespace
         }
         public IActionResult OnPost()
         {
-            user = _userRepository.GetUserById(id);
-            byte[] fileBytes;
-            using (var ms = new MemoryStream())
+
+            if(file != null)
             {
-                file.CopyTo(ms);
-                fileBytes = ms.ToArray();
-                string s = Convert.ToBase64String(fileBytes);
-                // act on the Base64 data
+                user = _userRepository.GetUserById(id);
+                byte[] fileBytes;
+                using (var ms = new MemoryStream())
+                {
+                    file.CopyTo(ms);
+                    fileBytes = ms.ToArray();
+                    string s = Convert.ToBase64String(fileBytes);
+                    // act on the Base64 data
+                }
+                _userRepository.UpdateUser(new User(){
+                    Name = user.Name,
+                    SurName = user.SurName,
+                    Email = user.Email,
+                    Password = user.Password,
+                    UserName = user.UserName,
+                    Score = user.Score,
+                    UserAccess = user.UserAccess,
+                    TaskSettings = user.TaskSettings,
+                    Img = fileBytes
+                });
+
+                return RedirectToPage("UserPage",new {id = user.Id});
             }
-            _userRepository.UpdateUser(new User(){
-                Name = user.Name,
-                SurName = user.SurName,
-                Email = user.Email,
-                Password = user.Password,
-                UserName = user.UserName,
-                Score = user.Score,
-                UserAccess = user.UserAccess,
-                TaskSettings = user.TaskSettings,
-                Img = fileBytes
-            });
+            else{
+                learn = Request.Form["radio"];
+                number = Request.Form["numberOfTasks"];
 
-            return RedirectToPage("UserPage",new {id = user.Id});
+                if(learn == "Capitals")
+                    return RedirectToPage("CapitalsTasks",new { letters = checkedLetters.ToString(), num= number});
+                else
+                    return RedirectToPage("FlagsTasks",new { letters = checkedLetters.ToString(), num= number});
+                    
+            }
         }
+        public void OnPost1()
+        {
 
+        }
     }
 }
