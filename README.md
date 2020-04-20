@@ -18,7 +18,6 @@ Study project for memorizing capitals and flags of countries
 **Технические требования**
 
 Веб-приложение
-  1. Back-end ASP.NET C#
-  2. EntityFrameworkCore
-  3. React(не окончательно)
-  4. Асинхронность поведения сервиса с целью защиты от лагов и провисаний
+  1. ASP.NET Core
+  2. Entity Framework Core
+  3. Razor Pages
