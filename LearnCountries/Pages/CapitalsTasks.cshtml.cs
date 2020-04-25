@@ -63,11 +63,11 @@ namespace MyApp.Namespace
                 {    
                     countryArray[i] = _countryRepository.GetRandomCountry();
                     for(int j = 0;j < i;j++)
-                    if(countryArray[j] == countryArray[i] && countryArray[j] != countryArray[numEC])
-                    {
-                        countryArray[i] = _countryRepository.GetRandomCountry();
-                        i--;
-                    }
+                        if(countryArray[j] == countryArray[i] || countryArray[i] == countryArray[numEC])
+                        {
+                            countryArray[i] = _countryRepository.GetRandomCountry();
+                            j=0;
+                        }
                 }
             }
         }
