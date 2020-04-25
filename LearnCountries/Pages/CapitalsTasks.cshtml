@@ -56,6 +56,7 @@
             <label  class="capitalName">@Model.enterCountry.CountryName</label>
             <form action="" name="Form" method="post" class="choice">
                 <label id="capitalLab"><input id="check" type="hidden" name="capitalName" value="@Model.enterCountry.CapitalName"></label>
+                <input type="hidden" name="emailU" value="@Model.user.Email">
                 <div class="question">
                     <label id="lab1"><input id="check1" type="radio" name="answer" value="@Model.countryArray[0].CapitalName" onclick="checkChoice()" />@Model.countryArray[0].CapitalName</label><br>
                     <label id="lab2"><input id="check2" type="radio" name="answer" value="@Model.countryArray[1].CapitalName" onclick="checkChoice()" />@Model.countryArray[1].CapitalName</label><br>
