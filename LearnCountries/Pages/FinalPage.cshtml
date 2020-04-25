@@ -1,4 +1,4 @@
-﻿@page "FinalPage"
+﻿@page "{id}"
 @model MyApp.Namespace.FinalPageModel
 @{
 }
@@ -34,22 +34,22 @@
             <ul>
             <ol class="table">
                 <div class="top-text">Top-3</div>
-                <li> Jhon : 830</li>
-                <li> Kate : 750</li>
-                <li> Sam : 745</li>
+                <li> @Model.topUsers[0].Name : @Model.topUsers[0].Score</li>
+                <li> @Model.topUsers[1].Name : @Model.topUsers[1].Score</li>
+                <li> @Model.topUsers[2].Name : @Model.topUsers[2].Score</li>
                 <div class="txt-3">...</div>
             </ol>
                 <p class="you-row">You : </p>
-                <label class="you-place">Position: 10</label>
-                <label class="you-score">Score : 30</label>
+                <label class="you-place">Position: @Model.userPosition</label>
+                <label class="you-score">Score : @Model.user.Score</label>
             </ul>
         </div>
         <div class="task-container">
             <div class="txt">Big Time! You finished all task for today</div>
-                <form>
+                <form method="POST">
                 <div class="container-login100-form-btn">
                     <button class="login100-form-btn">
-                        Go back to Your Page
+                       Go back to Your Page
                     </button>
                 </form>
         </div>

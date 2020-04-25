@@ -67,7 +67,8 @@ namespace MyApp.Namespace
                 {    
                     countryArray[i] = _countryRepository.GetRandomCountry();
                     for(int j = 0;j < i;j++)
-                        if(countryArray[j] == countryArray[i] || countryArray[i] == countryArray[numEC])
+                        if(countryArray[j].CountryName == countryArray[i].CountryName 
+                                                || countryArray[i].CountryName == countryArray[numEC].CountryName)
                         {
                             countryArray[i] = _countryRepository.GetRandomCountry();
                             j=0;
@@ -86,19 +87,19 @@ namespace MyApp.Namespace
                 user = _userRepository.GetUserByEmail(userEmail);
                 if(choice == rightChoice)
                     {
-                        user.Score+=10;
+                        user.Score += 10;
                         _userRepository.UpdateUser(user);
                     }
                 
                 else 
                 {
-                    user.Score-=10;
+                    user.Score -= 10;
                         _userRepository.UpdateUser(user);
                 }
-            return RedirectToPage("FlagsTasks",new { id = id, letters = letters, num= num,curNum = numOfCurTask+1});
+            return RedirectToPage("FlagsTasks",new { id = id, letters = letters, num = num,curNum = numOfCurTask+1});
             }
             else 
-                return RedirectToPage("FinalPage");
+                return RedirectToPage("FinalPage",new { id = id});
         }
     }
 }
