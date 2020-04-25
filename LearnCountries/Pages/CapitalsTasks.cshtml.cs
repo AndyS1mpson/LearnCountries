@@ -41,12 +41,12 @@ namespace MyApp.Namespace
             var users = _userRepository.GetUsers().OrderByDescending(x=>x.Score).ToList();
                 for(int i= 0;i<3;i++)
                     topUsers.Add(users[i]);
-        for(int i = 0;i < users.Count;i++)
-                if(users[i] == user)
-                { 
-                  userPosition = i+1;
-                  break;
-                }
+                for(int i = 0;i < users.Count;i++)
+                    if(users[i] == user)
+                    { 
+                    userPosition = i+1;
+                    break;
+                    }
 
             // генерация стран
             Random rand = new Random();
@@ -63,7 +63,7 @@ namespace MyApp.Namespace
                 {    
                     countryArray[i] = _countryRepository.GetRandomCountry();
                     for(int j = 0;j < i;j++)
-                    if(countryArray[j] == countryArray[i])
+                    if(countryArray[j] == countryArray[i] && countryArray[j] != countryArray[numEC])
                     {
                         countryArray[i] = _countryRepository.GetRandomCountry();
                         i--;

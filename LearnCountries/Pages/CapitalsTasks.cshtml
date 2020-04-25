@@ -28,6 +28,8 @@
 	<link rel="stylesheet" type="text/css" href="~/css/util.css">
 	<link rel="stylesheet" type="text/css" href="~/css/mainTP.css">
 <!--===============================================================================================-->
+    <script src="~/js/checkChoice.js"></script>
+  
 </head>
 <body>
     <div class="limiter">
@@ -51,19 +53,47 @@
         <div class="task-container">
             <div class="task-number">Task : @Model.numOfCurTask/@Model.num</div>
             <div class="text">Choose the capital of this country :</div>
-            <label class="capitalName">@Model.enterCountry.CountryName</label>
-            <form action="" method="post" class="choice">
-                <label><input type="radio" name="answer" value="1">@Model.countryArray[0].CapitalName</label><br>
-                <label><input type="radio" name="answer" value="2">@Model.countryArray[1].CapitalName</label><br>
-                <label><input type="radio" name="answer" value="3">@Model.countryArray[2].CapitalName</label><br>
-                <label><input type="radio" name="answer" value="4">@Model.countryArray[3].CapitalName</label><br>
+            <label  class="capitalName">@Model.enterCountry.CountryName</label>
+            <form action="" name="Form" method="post" class="choice">
+                <label id="capitalLab"><input id="check" type="hidden" name="capitalName" value="@Model.enterCountry.CapitalName"></label>
+                <div class="question">
+                    <label id="lab1"><input id="check1" type="radio" name="answer" value="@Model.countryArray[0].CapitalName" onclick="checkChoice()" />@Model.countryArray[0].CapitalName</label><br>
+                    <label id="lab2"><input id="check2" type="radio" name="answer" value="@Model.countryArray[1].CapitalName" onclick="checkChoice()" />@Model.countryArray[1].CapitalName</label><br>
+                    <label id="lab3"><input id="check3" type="radio" name="answer" value="@Model.countryArray[2].CapitalName" onclick="checkChoice()" />@Model.countryArray[2].CapitalName</label><br>
+                    <label id="lab4"><input id="check4" type="radio" name="answer" value="@Model.countryArray[3].CapitalName" onclick="checkChoice()" />@Model.countryArray[3].CapitalName</label><br>
+                </div>
                 <div class="container-login100-form-btn">
                     <button class="login100-form-btn">
                         Go
                     </button>
                 </form>
+             
+                   <script>
+                        var f = document.forms.Form;
+                        k = f.querySelectorAll('[name = "capitalName"]');
+                        f.onchange = function() {
+                            var n = f.querySelectorAll('[type="radio"]'),
+                            l = f.querySelectorAll('[type="radio"]:checked');
+                            for(var j=0; j<n.length; j++)
+                            {    if (l.length >= 1) 
+                                {                                       // если отметить три и более галочки
+                                    n[j].disabled = true;               // все чекбоксы становятся disabled
+                                    for(var i=0; i<l.length; i++)
+                                        l[i].disabled = false;          // но disabled убирается с помеченных галочками чекбоксов
+                                    
+                                } else {
+                                    n[j].disabled = false;              // если выделить менее трёх галочек, то disabled снимается со всех чекбоксов
+                                }
+                            } 
+                        
+                        }
+                      
+                    </script>
+                  
         </div>
     </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+ 
 </body>
 </html>
