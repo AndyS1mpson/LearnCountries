@@ -3,6 +3,7 @@
 @{
 	var id = RouteData.Values["id"];
 }
+@using MyApp.Namespace;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,36 +48,36 @@
 		<div class="user-data">
 			<div class="head">Select the first letters of country names to study : </div>
 			<ul class="checkboxes-1">
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="A"><label for="checkbox-2" class="label">A (10)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="B"><label for="checkbox-2" class="label">B (6)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="C"><label for="checkbox-5" class="label">C (7)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="D"><label for="checkbox-3" class="label">D (2)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="E"><label for="checkbox-4" class="label">E (4)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="F"><label for="checkbox-5" class="label">F (2)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="A"><label for="checkbox-2" class="label">A (@Model.numCountries[0])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="B"><label for="checkbox-2" class="label">B (@Model.numCountries[1])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="C"><label for="checkbox-5" class="label">C (@Model.numCountries[2])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="D"><label for="checkbox-3" class="label">D (@Model.numCountries[3])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="E"><label for="checkbox-4" class="label">E (@Model.numCountries[4])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="F"><label for="checkbox-5" class="label">F (@Model.numCountries[5])</label></li>
 			</ul>
 			<ul class="checkboxes-2">
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="G"><label for="checkbox-2" class="label">G (5)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="H"><label for="checkbox-2" class="label">H (1)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="I"><label for="checkbox-5" class="label">I (8)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="J"><label for="checkbox-3" class="label">J (3)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="K"><label for="checkbox-4" class="label">K (8)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="L"><label for="checkbox-5" class="label">L (9)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="G"><label for="checkbox-2" class="label">G (@Model.numCountries[6])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="H"><label for="checkbox-2" class="label">H (@Model.numCountries[7])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="I"><label for="checkbox-5" class="label">I (@Model.numCountries[8])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="J"><label for="checkbox-3" class="label">J (@Model.numCountries[9])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="K"><label for="checkbox-4" class="label">K (@Model.numCountries[10])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="L"><label for="checkbox-5" class="label">L (@Model.numCountries[11])</label></li>
 			</ul>
 			<ul class="checkboxes-3">
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="M"><label for="checkbox-2" class="label">M (18)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="N"><label for="checkbox-2" class="label">N (9)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="O"><label for="checkbox-5" class="label">O (1)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="P"><label for="checkbox-3" class="label">P (9)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="Q"><label for="checkbox-4" class="label">Q (1)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="R"><label for="checkbox-5" class="label">R (3)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="M"><label for="checkbox-2" class="label">M (@Model.numCountries[12])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="N"><label for="checkbox-2" class="label">N (@Model.numCountries[13])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="O"><label for="checkbox-5" class="label">O (@Model.numCountries[14])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="P"><label for="checkbox-3" class="label">P (@Model.numCountries[15])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="Q"><label for="checkbox-4" class="label">Q (@Model.numCountries[16])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="R"><label for="checkbox-5" class="label">R (@Model.numCountries[17])</label></li>
 			</ul>
 			<ul class="checkboxes-4">
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="S"><label for="checkbox-2" class="label">S (26)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="T"><label for="checkbox-2" class="label">T (11)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="U"><label for="checkbox-5" class="label">U (7)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="V"><label for="checkbox-3" class="label">V (4)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="Y"><label for="checkbox-4" class="label">Y (1)</label></li>
-				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="Z"><label for="checkbox-5" class="label">Z (2)</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="S"><label for="checkbox-2" class="label">S (@Model.numCountries[18])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="T"><label for="checkbox-2" class="label">T (@Model.numCountries[19])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="U"><label for="checkbox-5" class="label">U (@Model.numCountries[20])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="V"><label for="checkbox-3" class="label">V (@Model.numCountries[21])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="Y"><label for="checkbox-4" class="label">Y (@Model.numCountries[22])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="Z"><label for="checkbox-5" class="label">Z (@Model.numCountries[23])</label></li>
 			</ul>
 
 			<div class="txt2" >What do you want to learn?</div>
@@ -84,16 +85,16 @@
 			<li class="flags" class="checkbox-group"><input type="radio" name="radio" id="checkbox-2" class="checkbox" value="Flags"><label for="checkbox-2" class="label">Flags</label></li>
 			
 			<div class="txt3">How many questions do you want to answer?</div>
-			<input class="slider" type="range" min="10" max="30" name="numberOfTasks" list="rangeList1">
+			<input class="slider" type="range" min="@LearnCountries.Pages.NumberOfTasks.minValue" max="@LearnCountries.Pages.NumberOfTasks.maxValue" name="numberOfTasks" list="rangeList1">
 				<datalist id="rangeList1">
-				<option value="10" label="10"></option>
-				<option value="15" label="15"></option>
-				<option value="20" label="20"></option>
-				<option value="25" label="25"></option>
-				<option value="30" label="30"></option>
+				<option value="@LearnCountries.Pages.NumberOfTasks.minValue" label="10"></option>
+				<option value="@LearnCountries.Pages.NumberOfTasks.val1" label="15"></option>
+				<option value="@LearnCountries.Pages.NumberOfTasks.val2" label="20"></option>
+				<option value="@LearnCountries.Pages.NumberOfTasks.val3" label="25"></option>
+				<option value="@LearnCountries.Pages.NumberOfTasks.maxValue" label="30"></option>
 				</datalist>
-				<div class="txt4">10</div>
-				<div class="txt5">30</div>
+				<div class="txt4">@LearnCountries.Pages.NumberOfTasks.minValue</div>
+				<div class="txt5">@LearnCountries.Pages.NumberOfTasks.maxValue</div>
 			<div class="container-login100-form-btn">
 				<button class="login100-form-btn">
 					Start
