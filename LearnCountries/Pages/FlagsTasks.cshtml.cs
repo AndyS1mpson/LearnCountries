@@ -71,7 +71,7 @@ namespace MyApp.Namespace
                                                 || countryArray[i].CountryName == countryArray[numEC].CountryName)
                         {
                             countryArray[i] = _countryRepository.GetRandomCountry();
-                            j=0;
+                            j = -1;
                         }
                 }
             }

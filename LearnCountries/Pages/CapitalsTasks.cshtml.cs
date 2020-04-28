@@ -68,7 +68,7 @@ namespace MyApp.Namespace
                                                 || countryArray[i].CountryName == countryArray[numEC].CountryName)
                         {
                             countryArray[i] = _countryRepository.GetRandomCountry();
-                            j=0;
+                            j = -1;
                         }
                     }
                 }
@@ -77,8 +77,6 @@ namespace MyApp.Namespace
         public IActionResult OnPost()
         {
            
-            if(numOfCurTask != num)
-            {
                 var choice = Request.Form["answer"];
                 var rightChoice = Request.Form["capitalName"];
                 var userEmail = Request.Form["emailU"];
@@ -94,7 +92,9 @@ namespace MyApp.Namespace
                     user.Score-=10;
                         _userRepository.UpdateUser(user);
                 }
-            return RedirectToPage("CapitalsTasks",new { id = id, letters = letters, num= num,curNum = numOfCurTask+1});
+            if(numOfCurTask != num)
+            {
+                return RedirectToPage("CapitalsTasks",new { id = id, letters = letters, num= num,curNum = numOfCurTask+1});
             }
             else 
                 return RedirectToPage("FinalPage",new {id = id});

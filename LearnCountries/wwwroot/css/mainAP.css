@@ -132,11 +132,18 @@
     line-height: 1.5;
     color: #999999;
   }
-  
-  .txt2 {
+  .txt7 {
     font-size: 20px;
     margin-left: 330px;
     margin-top: -300px;
+  }
+  
+  .txt2 {
+    font-size: 20px;
+    margin-left: 800px;
+    margin-top: 7px;
+    margin-bottom: -27px;
+
   }
   
   
@@ -174,7 +181,7 @@
   .userName{
     padding: 20px;
     margin-top: 300px;
-    margin-left: -175px;
+    margin-left: -215px;
     font-size: 25px;
     color: #ffffff;
   }
@@ -309,7 +316,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 20px;
+  margin-top: 20px;
 }
 .login100-form-btn {
   font-family: Montserrat-Bold;
@@ -467,9 +474,24 @@
 }
 .txt6{
   margin-top: 400px;
-  margin-left: -145px;
+  margin-left: -185px;
   font-size: 25px;
   color: #ffffff;
+}
+.txt8{
+  font-size: 14\3px;
+}
+.newCountry{
+  margin-left: 700px;
+  margin-top: -320px;
+}
+.numOfTasks{
+  margin-left: 530px;
+  margin-top: -130px;
+}
+.txt9{
+  color: blanchedalmond;
+  font: 10px;
 }
 .logout{
   position: relative;

@@ -40,7 +40,12 @@ namespace MyApp.Namespace
         }
         public IActionResult OnPost()
         {
+            user = _userRepository.GetUserById(id);
+            if(user.UserAccess == 0)
             return RedirectToPage("UserPage",new { id = id});
+            else 
+            return RedirectToPage("AdminPage",new { id = id});
+
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿@page "{id}"
-@model MyApp.Namespace.UserPageModel
+@model MyApp.Namespace.AdminPageModel
 @{
 	var id = RouteData.Values["id"];
 }
@@ -24,7 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="~/css/util.css">
-	<link rel="stylesheet" type="text/css" href="~/css/mainUP.css">
+	<link rel="stylesheet" type="text/css" href="~/css/mainAP.css">
 <!--===============================================================================================-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
@@ -40,18 +40,20 @@
 							Log Out
 						</a>
 					</div>
-			</div>
+			</div>	
 			<label>
 				<img src="@Model.img" alt="Avatar" class="avatar">
 				<form  enctype="multipart/form-data" method="POST" name="formAv">
 					<input type="file" name="file" onchange="this.form.submit()" hidden/>
 				</form>
 			</label>
-			<div class="userName">@Model.user.UserName</div>
+			<div class="userName">@Model.user.UserName (admin)</div> 	
 			<div class="txt6">Score : @Model.user.Score</div>
 		<form method="POST">
 		<div class="user-data">
-			<div class="head">Select the first letters of country names to study : </div>
+				<div class="txt2">	
+				</div>
+				<div class="head">Select the first letters of country names to study : </div>
 			<ul class="checkboxes-1">
 				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="A"><label for="checkbox-2" class="label">A (@Model.numCountries[0])</label></li>
 				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="B"><label for="checkbox-2" class="label">B (@Model.numCountries[1])</label></li>
@@ -84,8 +86,13 @@
 				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="Y"><label for="checkbox-4" class="label">Y (@Model.numCountries[22])</label></li>
 				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="Z"><label for="checkbox-5" class="label">Z (@Model.numCountries[23])</label></li>
 			</ul>
-
-			<div class="txt2" >What do you want to learn?</div>
+            <div class = "newCountry">    
+				<a class="txt8 " href="/CreateCountry/@Model.user.Id" style="color: black;">
+                    Create new country
+                    <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                </a>
+			</div>
+			<div class="txt7" >What do you want to learn?</div>
 			<li class="capitals" class="checkbox-group"><input type="radio" name="radio" id="checkbox-2" class="checkbox" value="Capitals"><label for="checkbox-2" class="label">Capitals</label></li>
 			<li class="flags" class="checkbox-group"><input type="radio" name="radio" id="checkbox-2" class="checkbox" value="Flags"><label for="checkbox-2" class="label">Flags</label></li>
 			
@@ -100,11 +107,16 @@
 				</datalist>
 				<div class="txt4">@LearnCountries.Pages.NumberOfTasks.minValue</div>
 				<div class="txt5">@LearnCountries.Pages.NumberOfTasks.maxValue</div>
+			<div class = "numOfTasks">    
+				<a class="txt8 " href="/Settings/@Model.user.Id" style="color: black;">
+                    Change
+                    <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                </a>
+			</div>
 			<div class="container-login100-form-btn">
 				<button class="login100-form-btn">
 					Start
 				</button>
-			</div>
 		</div>
 		</form>
     </div>
