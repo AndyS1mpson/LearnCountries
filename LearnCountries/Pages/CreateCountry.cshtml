@@ -32,7 +32,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 			
-				<form method="POST" class="login100-form validate-form">
+				<form enctype="multipart/form-data" method="POST" class="login100-form validate-form">
 					<span class="login100-form-title">
 						Create new Country
 					</span>
@@ -52,12 +52,8 @@
 							<i class="fa fa-subway" aria-hidden="true"></i>
 						</span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Path is required">
-						<input class="input100" type="text" name="path" placeholder="File Path">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-train" aria-hidden="true"></i>
-						</span>
+					<div>
+						<input type="file" name="file">
                     </div>
                     
 					<div class="container-login100-form-btn">
