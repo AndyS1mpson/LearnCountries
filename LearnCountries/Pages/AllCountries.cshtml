@@ -1,0 +1,104 @@
+﻿@page "{id}"
+@model MyApp.Namespace.AllCountriesModel
+@{
+	var id = RouteData.Values["id"];
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Learn Countries</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="~/images/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/css/util.css">
+	<link rel="stylesheet" type="text/css" href="~/css/mainAP.css">
+<!--===============================================================================================-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+<script>
+	function Click()
+	{
+
+	}
+</script>
+
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-user">
+			<div class="countries-data">
+					@for(int j = 0;j <@Model.unit;j++)
+					{
+						<td>
+							<table border="1">
+							@for (int i = j*13;i < j*13+13;i++)
+							{
+								<form method="POST">
+									<input type="hidden" name="country" value="@Model.allCountries[i].CountryName">
+									<input type="hidden" name="capital" value="@Model.allCountries[i].CapitalName">
+
+									<tr>
+										<td>
+											Country : @Model.allCountries[i].CountryName<br>
+											Capital : @Model.allCountries[i].CapitalName<br>
+										</td>
+										<td>
+											<button>
+												Update
+											</button>
+										</td>
+									</tr>
+								</form>
+							}
+							</table>
+						</td>
+					}
+					<td>
+						<table border="1">
+							@for(int i = @Model.unit * 13;i < @Model.unit * 13 + @Model.balance;i++)
+							{
+								<td>
+									<table border="1">
+								<form method="POST">
+											<input type="hidden" name="country" value="@Model.allCountries[i].CountryName">
+											<input type="hidden" name="capital" value="@Model.allCountries[i].CapitalName">
+
+											<tr>
+												<td>
+													Country : @Model.allCountries[i].CountryName<br>
+													Capital : @Model.allCountries[i].CapitalName<br>
+												</td>
+												<td>
+													<button>
+														Update
+													</button>
+												</td>
+											</tr>
+										</form>
+									</table>
+								</td>
+					}
+							</table>
+					</td>
+					<div class="text-center ">
+                    <a class="txt10" href="@Url.Page("AdminPage",new {id = id})">
+                        <i class="fa fa-long-arrow-left m-l-5" aria-hidden="true"></i>
+                        Back to your page
+                    </a>
+			</div>
+        </div>
+    </div>
+</body>

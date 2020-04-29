@@ -48,7 +48,7 @@ namespace LearnCountries.Repositories
             countryForUpdate.CapitalName=country.CapitalName;
             countryForUpdate.Flag=country.Flag;
 
-            _db.SaveChangesAsync();
+            _db.SaveChanges();
         }
         public Country GetRandomCountry()
         {
