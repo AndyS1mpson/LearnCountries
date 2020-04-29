@@ -72,7 +72,7 @@ namespace MyApp.Namespace
                     Img = fileBytes
                 });
 
-                return RedirectToPage("UserPage",new {id = user.Id});
+                return RedirectToPage("AdminPage",new {id = user.Id});
             }
             else{
                 learn = Request.Form["radio"];
