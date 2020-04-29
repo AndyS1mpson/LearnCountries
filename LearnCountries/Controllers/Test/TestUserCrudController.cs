@@ -18,8 +18,8 @@ namespace LearnCountries.Controllers.Test
             => _userRepository.GetUsers();
 
         [HttpGet("{username}")]
-        public User GetUser(string userName)
-            =>_userRepository.GetUser(userName);
+        // public User GetUser(string userName)
+        //     =>_userRepository.GetUser(userName);
         [HttpDelete("{username}")]
         public void DeleteUser(string userName)
             =>_userRepository.DeleteUser(userName);

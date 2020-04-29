@@ -13,6 +13,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.Design;
 using LearnCountries.Interfaces;
 using LearnCountries.Repositories;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 
 namespace LearnCountries
 {
@@ -36,9 +38,25 @@ namespace LearnCountries
             services.AddTransient<IUserRepository,UserRepository>();
             services.AddTransient<ICountryRepository,CountryRepository>();
 
+            //services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
+
+
+            // services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => 
+            // {
+            //     options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/LogIn");
+            // });
+
             
+            services.AddRazorPages();
             services.AddControllers();
-            //services.AddControllersWithViews();
+            services.AddMvc();
+
+            services.AddMvc().AddRazorPagesOptions(options => {
+                options.Conventions.AddPageRoute("/UserPage","{id}");
+                //options.Conventions.AddPageRoute("/CapitalsTasks","{letters}/{num}");
+            });
+
+            //services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,13 +74,15 @@ namespace LearnCountries
             }
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            //app.UseSession();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseRouting();
-
+            app.UseStaticFiles();       // connect static фfiles
             app.UseAuthorization();
             app.UseEndpoints(endpoints => 
             {
-                endpoints.MapControllers(); //connect routing to controllers
+                endpoints.MapRazorPages(); //connect routing to controllers
             });
             // app.UseEndpoints(endpoints =>
             // {

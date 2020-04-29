@@ -29,6 +29,9 @@ namespace LearnCountries.Repositories
         public IEnumerable<string> GetCapitals()
             =>_db.Countries.Select(x=>x.CapitalName).Distinct();
             //_db.Countries.FromSqlRaw("SELECT DISTINCT CapitalName ").AsEnumerable();
+        
+        public IEnumerable<Country> GetCountryByMainLet(char let)
+            => _db.Countries.Where(x=>x.MainLetter == let).ToList();
 
         public IEnumerable<Country> GetCountries()
             =>_db.Countries.Where(x=>true).ToList();
@@ -45,7 +48,13 @@ namespace LearnCountries.Repositories
             countryForUpdate.CapitalName=country.CapitalName;
             countryForUpdate.Flag=country.Flag;
 
-            _db.SaveChangesAsync();
+            _db.SaveChanges();
+        }
+        public Country GetRandomCountry()
+        {
+            var countries = GetCountries().ToList();
+            Random rand = new Random();
+            return countries[rand.Next(0,countries.Count - 1)];
         }
     }
 }

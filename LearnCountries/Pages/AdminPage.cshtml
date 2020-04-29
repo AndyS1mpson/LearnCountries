@@ -1,0 +1,130 @@
+﻿@page "{id}"
+@model MyApp.Namespace.AdminPageModel
+@{
+	var id = RouteData.Values["id"];
+}
+@using MyApp.Namespace;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Learn Countries</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="~/images/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/css/util.css">
+	<link rel="stylesheet" type="text/css" href="~/css/mainAP.css">
+<!--===============================================================================================-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-user">
+            <div class="row">
+				<div class="projName">Learn Countries</div>
+					<div >
+						<a class="logout" href="/Login">
+							Log Out
+						</a>
+					</div>
+			</div>	
+			<label>
+				<img src="@Model.img" alt="Avatar" class="avatar">
+				<form  enctype="multipart/form-data" method="POST" name="formAv">
+					<input type="file" name="file" onchange="this.form.submit()" hidden/>
+				</form>
+			</label>
+			<div class="userName">@Model.user.UserName (admin)</div> 	
+			<div class="txt6">Score : @Model.user.Score</div>
+		<form method="POST">
+		<div class="user-data">
+				<div class="txt2">	
+				</div>
+				<div class="head">Select the first letters of country names to study : </div>
+			<ul class="checkboxes-1">
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="A"><label for="checkbox-2" class="label">A (@Model.numCountries[0])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="B"><label for="checkbox-2" class="label">B (@Model.numCountries[1])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="C"><label for="checkbox-5" class="label">C (@Model.numCountries[2])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="D"><label for="checkbox-3" class="label">D (@Model.numCountries[3])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="E"><label for="checkbox-4" class="label">E (@Model.numCountries[4])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="F"><label for="checkbox-5" class="label">F (@Model.numCountries[5])</label></li>
+			</ul>
+			<ul class="checkboxes-2">
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="G"><label for="checkbox-2" class="label">G (@Model.numCountries[6])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="H"><label for="checkbox-2" class="label">H (@Model.numCountries[7])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="I"><label for="checkbox-5" class="label">I (@Model.numCountries[8])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="J"><label for="checkbox-3" class="label">J (@Model.numCountries[9])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="K"><label for="checkbox-4" class="label">K (@Model.numCountries[10])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="L"><label for="checkbox-5" class="label">L (@Model.numCountries[11])</label></li>
+			</ul>
+			<ul class="checkboxes-3">
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="M"><label for="checkbox-2" class="label">M (@Model.numCountries[12])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="N"><label for="checkbox-2" class="label">N (@Model.numCountries[13])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="O"><label for="checkbox-5" class="label">O (@Model.numCountries[14])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="P"><label for="checkbox-3" class="label">P (@Model.numCountries[15])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="Q"><label for="checkbox-4" class="label">Q (@Model.numCountries[16])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="R"><label for="checkbox-5" class="label">R (@Model.numCountries[17])</label></li>
+			</ul>
+			<ul class="checkboxes-4">
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="S"><label for="checkbox-2" class="label">S (@Model.numCountries[18])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-2" class="checkbox" value="T"><label for="checkbox-2" class="label">T (@Model.numCountries[19])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="U"><label for="checkbox-5" class="label">U (@Model.numCountries[20])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-3" class="checkbox" value="V"><label for="checkbox-3" class="label">V (@Model.numCountries[21])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-4" class="checkbox" value="Y"><label for="checkbox-4" class="label">Y (@Model.numCountries[22])</label></li>
+				<li class="checkbox-group"><input type="checkbox" name="CheckedLetter" id="checkbox-5" class="checkbox" value="Z"><label for="checkbox-5" class="label">Z (@Model.numCountries[23])</label></li>
+			</ul>
+			<div class = "allCountry">    
+				<a class="txt8 " href="/AllCountries/@Model.user.Id" style="color: black;">
+                    Show all countries
+                    <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                </a>
+			</div>
+            <div class = "newCountry">    
+				<a class="txt8 " href="/CreateCountry/@Model.user.Id" style="color: black;">
+                    Create new country
+                    <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                </a>
+			</div>
+			<div class="txt7" >What do you want to learn?</div>
+			<li class="capitals" class="checkbox-group"><input type="radio" name="radio" id="checkbox-2" class="checkbox" value="Capitals"><label for="checkbox-2" class="label">Capitals</label></li>
+			<li class="flags" class="checkbox-group"><input type="radio" name="radio" id="checkbox-2" class="checkbox" value="Flags"><label for="checkbox-2" class="label">Flags</label></li>
+			
+			<div class="txt3">How many questions do you want to answer?</div>
+			<input class="slider" type="range" min="@LearnCountries.Pages.NumberOfTasks.minValue" max="@LearnCountries.Pages.NumberOfTasks.maxValue" name="numberOfTasks" list="rangeList1">
+				<datalist id="rangeList1">
+				<option value="@LearnCountries.Pages.NumberOfTasks.minValue" label="10"></option>
+				<option value="@LearnCountries.Pages.NumberOfTasks.val1" label="15"></option>
+				<option value="@LearnCountries.Pages.NumberOfTasks.val2" label="20"></option>
+				<option value="@LearnCountries.Pages.NumberOfTasks.val3" label="25"></option>
+				<option value="@LearnCountries.Pages.NumberOfTasks.maxValue" label="30"></option>
+				</datalist>
+				<div class="txt4">@LearnCountries.Pages.NumberOfTasks.minValue</div>
+				<div class="txt5">@LearnCountries.Pages.NumberOfTasks.maxValue</div>
+			<div class = "numOfTasks">    
+				<a class="txt8 " href="/Settings/@Model.user.Id" style="color: black;">
+                    Change
+                    <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                </a>
+			</div>
+			<div class="container-login100-form-btn">
+				<button class="login100-form-btn">
+					Start
+				</button>
+		</div>
+		</form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿@page "{id}/{letters}/{num}/{curNum}"
+@model MyApp.Namespace.FlagsTasksModel
+@{
+    var id = RouteData.Values["id"];
+    var letters = RouteData.Values["letters"];
+    var num = RouteData.Values["num"];
+    var curNum = RouteData.Values["curNum"];
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Learn Countries</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="~/images/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/css/util.css">
+	<link rel="stylesheet" type="text/css" href="~/css/mainTFP.css">
+<!--===============================================================================================-->
+    <script src="~/js/checkChoice.js"></script>
+</head>
+<body>
+    <div class="limiter">
+    <div class="main-container">
+        <div class="projName">Learn Countries</div>
+        <div class="score-container">
+            <p class="Score">Score</p>
+            <ul>
+            <ol class="table">
+                <div class="top-text">Top-3</div>
+                <li> @Model.topUsers[0].Name : @Model.topUsers[0].Score</li>
+                <li> @Model.topUsers[1].Name : @Model.topUsers[1].Score</li>
+                <li> @Model.topUsers[2].Name : @Model.topUsers[2].Score</li>
+                <div class="txt-3">...</div>
+            </ol>
+                <p class="you-row">You : </p>
+                <label class="you-place">Place: @Model.userPosition</label>
+                <label class="you-score">Score : @Model.user.Score</label>
+            </ul>
+        </div>
+        <div class="task-container">
+            <div class="task-number">Task : @Model.numOfCurTask/ @Model.num</div>
+            <div class="text">The flag of whose country is it? :</div>
+            <div class="image"><img src="~/images/Flags/@Model.enterCountry.Flag" height="200" ></div>
+            <form name="Form" action="" method="post" class="choice">
+                <label id="capitalLab"><input id="check" type="hidden" name="capitalName" value="@Model.enterCountry.CountryName"></label>
+                <input type="hidden" name="emailU" value="@Model.user.Email">
+                
+                <label id="lab1"><input id="check1" type="radio" name="answer" value="@Model.countryArray[0].CountryName" onclick="checkChoice()" >@Model.countryArray[0].CountryName</label><br>
+                <label id="lab2"><input id="check2" type="radio" name="answer" value="@Model.countryArray[1].CountryName" onclick="checkChoice()" >@Model.countryArray[1].CountryName</label><br>
+                <label id="lab3"><input id="check3" type="radio" name="answer" value="@Model.countryArray[2].CountryName" onclick="checkChoice()" >@Model.countryArray[2].CountryName</label><br>
+                <label id="lab4"><input id="check4" type="radio" name="answer" value="@Model.countryArray[3].CountryName" onclick="checkChoice()" >@Model.countryArray[3].CountryName</label><br>
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        Go
+                    </button>
+            </form>
+            <script>
+                        var f = document.forms.Form;
+                        f.onchange = function() {
+                            var n = f.querySelectorAll('[type="radio"]'),
+                            l = f.querySelectorAll('[type="radio"]:checked');
+                            for(var j=0; j<n.length; j++)
+                            {    if (l.length >= 1) 
+                                {                                       // если отметить три и более галочки
+                                    n[j].disabled = true;               // все чекбоксы становятся disabled
+                                    for(var i=0; i<l.length; i++)
+                                        l[i].disabled = false;          // но disabled убирается с помеченных галочками чекбоксов
+                                    
+                                } else {
+                                    n[j].disabled = false;              // если выделить менее трёх галочек, то disabled снимается со всех чекбоксов
+                                }
+                            } 
+                        
+                        }
+                      
+            </script>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

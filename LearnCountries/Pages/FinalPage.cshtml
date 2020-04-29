@@ -1,0 +1,59 @@
+﻿@page "{id}"
+@model MyApp.Namespace.FinalPageModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Learn Countries</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="~/images/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/css/util.css">
+	<link rel="stylesheet" type="text/css" href="~/css/mainFP.css">
+<!--===============================================================================================-->
+</head>
+<body>
+    <div class="limiter">
+    <div class="main-container">
+        <div class="projName">Learn Countries</div>
+        <div class="score-container">
+            <b class="Score">Score</b>
+            <ul>
+            <ol class="table">
+                <div class="top-text">Top-3</div>
+                <li> @Model.topUsers[0].Name : @Model.topUsers[0].Score</li>
+                <li> @Model.topUsers[1].Name : @Model.topUsers[1].Score</li>
+                <li> @Model.topUsers[2].Name : @Model.topUsers[2].Score</li>
+                <div class="txt-3">...</div>
+            </ol>
+                <p class="you-row">You : </p>
+                <label class="you-place">Position: @Model.userPosition</label>
+                <label class="you-score">Score : @Model.user.Score</label>
+            </ul>
+        </div>
+        <div class="task-container">
+            <div class="txt">Big Time! You finished all task for today</div>
+                <form method="POST">
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                       Go back to Your Page
+                    </button>
+                </form>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

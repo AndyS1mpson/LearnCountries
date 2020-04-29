@@ -11,5 +11,7 @@ namespace LearnCountries.Interfaces
          public void UpdateCountry(Country country);
          public void CreateCountry(Country country);
          public void DeleteCountry(string name);
+         public IEnumerable<Country> GetCountryByMainLet(char let);
+         public Country GetRandomCountry();
     }
 }
