@@ -59,7 +59,7 @@ Study project for memorizing capitals and flags of countries
 
 По завершении заданий пользователь попадает на финальную страницу
 
-![](PagesScreenshots/FinalPage.jpg)
+![](PagesScreenshots/FinishPage.jpg)
 
 Если на сайт заходит администратор, он точно так же вводит свою почту и свой пароль и попадает на свою страницу 
 
