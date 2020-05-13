@@ -22,6 +22,7 @@ Study project for memorizing capitals and flags of countries
   1. ASP.NET Core
   2. Entity Framework Core
   3. Razor Pages
+  4. HTML/CSS/JS
 
 **Интерфейс**
 
